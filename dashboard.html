@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GENVI — Dashboard</title>
+
+    <link rel="stylesheet" href="/frontend/style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <span>✦</span>
+            GENVI
+        </div>
+
+        <p class="menu-title">MAIN MENU</p>
+
+        <nav>
+
+            <a href="#" class="nav-item active">
+                <span>⌂</span>
+                <span>Home</span>
+            </a>
+
+           <a href="ai-mentor.html" class="nav-item">
+    <span>✦</span>
+    <span>AI Mentor</span>
+</a>
+
+            <a href="#" class="nav-item">
+                <span>◫</span>
+                <span>Study Planner</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>✓</span>
+                <span>Quiz</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◔</span>
+                <span>Progress</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>▤</span>
+                <span>My Notes</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <span>⚙</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="index.html" class="nav-item logout">
+                <span>↪</span>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div>
+                <p class="welcome-small">WELCOME BACK 👋</p>
+
+                <h1>
+                    Ready to learn,
+                    <span>Student!</span>
+                </h1>
+
+                <p class="top-description">
+                    Let's make today a productive learning day.
+                </p>
+            </div>
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    S
+                </div>
+
+                <div>
+                    <strong>Student</strong>
+                    <small>Learning Explorer</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- AI HERO -->
+        <section class="ai-hero">
+
+            <div class="ai-content">
+
+                <div class="ai-icon">
+                    ✦
+                </div>
+
+                <div>
+
+                    <p class="ai-label">
+                        YOUR AI LEARNING MENTOR
+                    </p>
+
+                    <h2>
+                        What do you want to learn today?
+                    </h2>
+
+                    <p>
+                        Ask GENVI anything, understand difficult concepts,
+                        or create a personalized study plan.
+                    </p>
+
+                </div>
+
+            </div>
+<button class="ask-btn" onclick="window.location.href='ai-mentor.html'">
+    Ask GENVI →
+</button>
+
+        </section>
+
+
+        <!-- STATS -->
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    📚
+                </div>
+
+                <div>
+                    <span>Topics Studied</span>
+                    <strong>12</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    ✓
+                </div>
+
+                <div>
+                    <span>Quizzes Completed</span>
+                    <strong>8</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon cyan">
+                    ◔
+                </div>
+
+                <div>
+                    <span>Learning Streak</span>
+                    <strong>5 Days</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon pink">
+                    ★
+                </div>
+
+                <div>
+                    <span>Average Score</span>
+                    <strong>86%</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTENT GRID -->
+        <section class="content-grid">
+
+
+            <!-- PROGRESS -->
+            <div class="panel progress-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <p>YOUR PROGRESS</p>
+                        <h3>Learning Progress</h3>
+                    </div>
+
+                    <span class="percentage">
+                        72%
+                    </span>
+
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+
+                <p class="progress-text">
+                    You're doing great! Keep going to reach your goal.
+                </p>
+
+                <div class="goal-row">
+
+                    <span>Weekly Goal</span>
+
+                    <strong>
+                        7 / 10 hours
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+            <div class="panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <p>QUICK ACTIONS</p>
+                        <h3>Continue Learning</h3>
+                    </div>
+
+                </div>
+
+                <div class="quick-actions">
+
+                    <button>
+                        <span>🤖</span>
+                        <div>
+                            <strong>Ask AI Mentor</strong>
+                            <small>Get instant explanations</small>
+                        </div>
+                    </button>
+
+                    <button>
+                        <span>📝</span>
+                        <div>
+                            <strong>Take a Quiz</strong>
+                            <small>Test your knowledge</small>
+                        </div>
+                    </button>
+
+                    <button>
+                        <span>📅</span>
+                        <div>
+                            <strong>Study Planner</strong>
+                            <small>Plan your learning</small>
+                        </div>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUBJECTS -->
+        <section class="subjects-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p>YOUR LEARNING</p>
+                    <h2>Continue Studying</h2>
+                </div>
+
+                <button>
+                    View All →
+                </button>
+
+            </div>
+
+
+            <div class="subject-grid">
+<div class="subject-card"
+     onclick="openMentor('Data Structures & Algorithms')"
+     style="cursor: pointer;">
+
+    <div class="subject-symbol">DS</div>
+
+    <h3>Data Structures</h3>
+
+    <p>Arrays, Trees & Graphs</p>
+
+    <div class="mini-progress">
+        <div style="width: 78%;"></div>
+    </div>
+
+    <small>78% completed</small>
+
+</div>
+
+
+                <div class="subject-card"
+     onclick="openMentor('Algorithms')"
+     style="cursor: pointer;">
+
+    <div class="subject-symbol purple-symbol">AL</div>
+
+    <h3>Algorithms</h3>
+                    <p>Sorting & Searching</p>
+
+                    <div class="mini-progress">
+                        <div style="width: 62%;"></div>
+                    </div>
+
+                    <small>62% completed</small>
+                </div>
+
+
+                <div class="subject-card">
+                    <div class="subject-symbol cyan-symbol">DB</div>
+                    <h3>Database Systems</h3>
+                    <p>SQL & DBMS Concepts</p>
+
+                    <div class="mini-progress">
+                        <div style="width: 45%;"></div>
+                    </div>
+
+                    <small>45% completed</small>
+                </div>
+
+
+                <div class="subject-card"
+     onclick="openMentor('Operating System')"
+     style="cursor: pointer;">
+
+    <div class="subject-symbol pink-symbol">OS</div>
+
+    <h3>Operating Systems</h3>
+
+    <p>Processes & Memory</p>
+
+    <div class="mini-progress">
+        <div style="width: 35%;"></div>
+    </div>
+
+    <small>35% completed</small>
+
+</div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+<script>
+
+function openMentor(subject) {
+
+    const encodedSubject = encodeURIComponent(subject);
+
+    window.location.href =
+        "ai-mentor.html?subject=" + encodedSubject;
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GENVI — AI-Powered Learning Mentor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <img class="hero-image" src="genvi-hero.png" alt="GENVI AI-Powered Learning Mentor">
+
+    <!-- Transparent working hotspots placed over the exact screenshot -->
+    <button
+  class="hotspot start"
+  onclick="window.location.href='login.html'"
+  aria-label="Start Learning">
+</button>
+    <button class="hotspot feature ai" onclick="feature('AI Explanations')" aria-label="AI Explanations"></button>
+    <button class="hotspot feature ask" onclick="feature('Ask Anything')" aria-label="Ask Anything"></button>
+    <button class="hotspot feature personal" onclick="feature('Personalized Learning')" aria-label="Personalized Learning"></button>
+    <button class="hotspot feature progress" onclick="feature('Track Progress')" aria-label="Track Progress"></button>
+
+    <div class="modal" id="modal">
+      <div class="modal-box">
+        <button class="close" onclick="closeModal()">×</button>
+        <div class="icon">✨</div>
+        <h2 id="modalTitle">Welcome to GENVI</h2>
+        <p id="modalText">Your AI-powered learning journey starts here.</p>
+        <button class="continue" onclick="closeModal()">Continue →</button>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

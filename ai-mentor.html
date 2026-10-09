@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GENVI — AI Mentor</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .mentor-page {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 80% 10%, rgba(45,120,255,.18), transparent 30%),
+                radial-gradient(circle at 20% 90%, rgba(130,70,255,.14), transparent 30%),
+                #050817;
+            color: white;
+            padding: 35px 45px;
+        }
+
+        .mentor-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .back-btn {
+            color: #55c8ff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .mentor-title small {
+            color: #54c7ff;
+            letter-spacing: 2px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .mentor-title h1 {
+            margin: 7px 0;
+            font-size: 32px;
+        }
+
+        .mentor-title p {
+            color: #737c9d;
+            margin: 0;
+        }
+        </style>
+        <style>
+
+        
+
+        .chat-box {
+            max-width: 950px;
+            height: 650px;
+            margin: 25px auto 0;
+
+            display: flex;
+            flex-direction: column;
+
+            border-radius: 24px;
+            overflow: hidden;
+
+            background: rgba(15,21,48,.85);
+            border: 1px solid rgba(255,255,255,.08);
+
+            box-shadow: 0 25px 70px rgba(0,0,0,.35);
+        }
+
+        .chat-header {
+            padding: 20px 24px;
+
+
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            background: linear-gradient(
+                120deg,
+                rgba(20,65,150,.7),
+                rgba(55,35,130,.7)
+            );
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .mentor-avatar {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            font-size: 23px;
+
+            background: linear-gradient(
+                135deg,
+                #20c8ff,
+                #754cff
+            );
+
+            box-shadow: 0 8px 25px rgba(40,140,255,.3);
+        }
+
+        .chat-header strong {
+            display: block;
+            font-size: 15px;
+        }
+
+        .online {
+            display: block;
+            margin-top: 4px;
+            color: #50e0a0;
+            font-size: 11px;
+        }
+
+        .messages {
+            flex: 1;
+            padding: 25px;
+
+            overflow-y: auto;
+
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .message {
+            max-width: 75%;
+            padding: 14px 17px;
+
+            border-radius: 17px;
+
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+
+            background: rgba(60,80,140,.28);
+            border: 1px solid rgba(100,140,255,.12);
+            color: #dce5ff;
+        }
+
+        .user-message {
+            align-self: flex-end;
+
+            background: linear-gradient(
+                135deg,
+                #277eff,
+                #704cff
+            );
+
+            color: white;
+        }
+
+        .suggestions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+
+            padding: 0 25px 15px;
+        }
+
+        .suggestion {
+            border: 1px solid rgba(80,150,255,.2);
+
+            background: rgba(60,100,200,.08);
+
+            color: #83cfff;
+
+            padding: 9px 13px;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+            font-size: 11px;
+        }
+
+        .suggestion:hover {
+            background: rgba(60,120,255,.18);
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+
+            padding: 18px;
+
+            border-top: 1px solid rgba(255,255,255,.07);
+
+            background: rgba(5,8,23,.55);
+        }
+
+        .chat-input input {
+            flex: 1;
+
+            border: 1px solid rgba(130,180,255,.18);
+
+            background: rgba(255,255,255,.05);
+
+            color: white;
+
+            outline: none;
+
+            border-radius: 14px;
+
+            padding: 14px 16px;
+
+            font-size: 14px;
+        }
+
+        .chat-input input:focus {
+            border-color: #29a9ff;
+            box-shadow: 0 0 0 3px rgba(41,169,255,.08);
+        }
+
+        .send-btn {
+            border: none;
+
+            padding: 0 22px;
+
+            border-radius: 14px;
+
+            color: white;
+
+            font-weight: 700;
+
+            background: linear-gradient(
+                100deg,
+                #08a9ff,
+                #704bff
+            );
+
+            cursor: pointer;
+        }
+
+        .send-btn:hover {
+            transform: translateY(-1px);
+        }
+
+
+        @media(max-width:700px) {
+            .mentor-page {
+                padding: 22px;
+            }
+
+            .chat-box {
+                height: calc(100vh - 190px);
+            }
+
+            .message {
+                max-width: 88%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="mentor-page">
+
+    <div class="mentor-top">
+
+        <div class="mentor-title">
+            <small>GENVI AI LEARNING MENTOR</small>
+            <h1>Learn smarter with GENVI ✦</h1>
+            <p>Ask questions, understand concepts and learn step-by-step.</p>
+        </div>
+
+        <a href="dashboard.html" class="back-btn">
+            ← Dashboard
+        </a>
+
+    </div>
+
+
+    <div class="chat-box">
+
+        <div class="chat-header">
+
+            <div class="mentor-avatar">
+                ✦
+            </div>
+
+            <div>
+                <strong>GENVI AI Mentor</strong>
+                <span class="online">● Online • Ready to help</span>
+            </div>
+
+        </div>
+
+
+        <div class="messages" id="messages">
+
+            <div class="message bot-message">
+                👋 Hey! I'm your GENVI AI Mentor.<br><br>
+                What would you like to learn today?
+                You can ask me to explain a concept, solve a problem,
+                or help you prepare for an exam.
+            </div>
+
+        </div>
+
+
+        <div class="suggestions">
+
+            <button class="suggestion"
+                onclick="useSuggestion('Explain Data Structures in simple words')">
+                📚 Explain Data Structures
+            </button>
+
+            <button class="suggestion"
+                onclick="useSuggestion('Teach me SQL from basics')">
+                🗄️ Teach me SQL
+            </button>
+
+            <button class="suggestion"
+                onclick="useSuggestion('Help me prepare for my exam')">
+                🎯 Exam Preparation
+            </button>
+
+        </div>
+
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Ask GENVI anything..."
+                autocomplete="off"
+            >
+
+            <button class="send-btn" onclick="sendMessage()">
+                Send →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+
+const API_URL = "http://127.0.0.1:5000/api/mentor";
+const urlParams = new URLSearchParams(window.location.search);
+
+const selectedSubject =
+    urlParams.get("subject") || "Operating System";
+
+function addMessage(text, type) {
+
+    const messages = document.getElementById("messages");
+
+    const message = document.createElement("div");
+
+    message.className = "message " + type;
+
+    message.innerHTML = text;
+
+    messages.appendChild(message);
+
+    messages.scrollTop = messages.scrollHeight;
+}
+
+
+function useSuggestion(text) {
+
+    document.getElementById("userInput").value = text;
+
+    sendMessage();
+}
+
+
+async function sendMessage() {
+
+    const input = document.getElementById("userInput");
+
+    const text = input.value.trim();
+
+    if (!text) {
+        return;
+    }
+
+    // Show user's question
+    addMessage(text, "user-message");
+
+    input.value = "";
+
+
+    // Loading message
+    const messages = document.getElementById("messages");
+
+    const loading = document.createElement("div");
+
+    loading.className = "message bot-message";
+
+    loading.id = "loading-message";
+
+    loading.innerHTML = "🧠 GENVI is thinking...";
+
+    messages.appendChild(loading);
+
+    messages.scrollTop = messages.scrollHeight;
+
+
+    try {
+
+        const response = await fetch(API_URL, {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+
+                question: text,
+
+                level: "Intermediate",
+
+                learning_style: "Simple Explanation",
+
+                subject: selectedSubject
+
+            })
+
+        });
+
+
+        const data = await response.json();
+
+
+        // Remove loading
+        loading.remove();
+
+
+        if (!response.ok || !data.success) {
+
+            addMessage(
+                "❌ GENVI couldn't generate an answer.<br><br>" +
+                (data.error || "Please check the backend."),
+                "bot-message"
+            );
+
+            return;
+        }
+
+
+        // REAL AI RESPONSE
+        let answer = data.answer || "No answer received.";
+
+        answer = answer
+            .replace(/\n/g, "<br>")
+            .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
+
+
+        addMessage(answer, "bot-message");
+
+
+    } catch (error) {
+
+        loading.remove();
+
+        addMessage(
+            "❌ Cannot connect to GENVI AI.<br><br>" +
+            "Make sure the Flask server is running on port 5000.",
+            "bot-message"
+        );
+
+        console.error(error);
+    }
+}
+
+
+document.getElementById("userInput").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
