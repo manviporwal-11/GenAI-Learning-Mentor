@@ -16,7 +16,7 @@ An AI-powered personalized learning mentor that guides students using **Retrieva
 | Vector Store | FAISS |
 | Frontend | Streamlit, HTML, CSS, JavaScript |
 
-## 🚀 Getting Started
+
 
 ## 🚀 Getting Started
 
@@ -46,3 +46,5 @@ streamlit run app.py
 
 ## 📄 License
 MIT License: free to use, modify and distribute.
+
+
