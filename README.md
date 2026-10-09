@@ -18,6 +18,8 @@ An AI-powered personalized learning mentor that guides students using **Retrieva
 
 ## 🚀 Getting Started
 
+## 🚀 Getting Started
+
 1. Clone the repository
 ```bash
 git clone https://github.com/manviporwal-11/GenAI-Learning-Mentor.git
@@ -30,10 +32,7 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-3. Install dependencies
-```bash
-pip install -r requirements.txt
-```
+3. Add your API key in a `.env` file
 
 4. Run the app
 ```bash
